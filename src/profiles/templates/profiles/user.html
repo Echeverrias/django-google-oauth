@@ -1,0 +1,16 @@
+{%  extends 'profiles/base.html'%}
+{% block title_app %}
+    Profile
+{%  endblock %}
+{% block app %}
+    <p><span>First name: </span>{{ user.first_name }}</p>
+    <p><span>Last name: </span>{{ user.last_name }}</p>
+    <p><span>Biography: </span>{{ user.bio }}</p>
+    <p><span>Location: </span>{{ user.location }}</p>
+    <p><span>Birth date: </span>{{ user.birth_date }}</p>
+    {% if user.avatar %}
+        <image src='{{user.avatar.url}}'/>
+    {% endif %}
+    <br>
+    {% include 'account/update.html' %}
+{% endblock %}

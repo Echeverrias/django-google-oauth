@@ -1,0 +1,32 @@
+{%  extends 'account/base.html'%}
+{% block title_app %}
+        {% if 'login' in request.build_absolute_uri  %}
+            Sign In
+        {% elif 'register' in request.build_absolute_uri  %}
+            Sign Up
+        {% elif 'update' in request.build_absolute_uri  %}
+            Update
+        {%  endif %}
+    {% endblock %}
+{% block app%}
+    <form action="." method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">
+            {% if 'login' in request.build_absolute_uri %}
+                Sign In
+            {% elif 'register' in request.build_absolute_uri %}
+                Sign Up
+            {% else %}
+                Save
+            {% endif %}
+        </button>
+    </form>
+    <br>
+
+    {% if 'login' in request.build_absolute_uri  %}
+        If you want to sign in with Google:
+        {%  include 'oauth_app/login_link.html' %}<br>
+        If you are not sign up: <a href="{% url 'register' %}">Sign Up</a>
+    {% endif %}
+{% endblock %}

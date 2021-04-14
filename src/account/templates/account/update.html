@@ -1,0 +1,3 @@
+{%  if request.user.pk %}
+<a href="{% url 'update' request.user.pk%}">Update</a>
+{%  endif %}

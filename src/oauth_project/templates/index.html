@@ -1,0 +1,5 @@
+{%  extends 'base.html' %}
+{% block content %}
+<h1>Home</h1>
+<a href="{% url 'get_user' request.user.pk %}">Go to your profile</a>
+{%  endblock %}

@@ -1,0 +1,14 @@
+{% if request.user.is_authenticated %}
+    <p>
+        <h2>{{user.username}}</h2>
+        {% if user.avatar %}
+            <image src='{{user.avatar.url}}'/>
+        {% endif %}
+        {% if user.photo %}
+            <image src='{{user.photo.url}}'/>
+        {% endif %}
+       {% if user.icon %}
+            <image src='{{user.icon.url}}'/>
+        {% endif %}
+    </p>
+{%endif%}
