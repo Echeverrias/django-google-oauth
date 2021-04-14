@@ -29,7 +29,7 @@ You have to go to the [Google API Dashboard](https://console.cloud.google.com/ap
 9. Execute <b>python manage.py runserver</b> and the application will start in the url <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a><br>
 10. Go to [administration panel](http://127.0.0.1:8000/admin)
 11. Add a new site in Site model adding the origin of your app (http://127.0.0.1:8000) as the domain name.
-12. Add a new social application in Social Applications model with the choosing Google ass provider, adding the client id and the secret key provided by Google and chose your app origin app as choosen sites.
+12. Add a new social application in Social Applications model choosing Google ass provider, adding the client id and the secret key provided by Google and chosing your origin app as chosen sites.
 
 ## Development
 The app is developed in [Python](https://www.python.org) and uses the framework [Django](https://www.djangoproject.com/) for build the web app.<br><br>
