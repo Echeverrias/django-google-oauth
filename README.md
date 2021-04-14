@@ -12,7 +12,7 @@ You need to have installed:
   
 You have to go to the [Google API Dashboard](https://console.cloud.google.com/apis/dashboard) and:
 - Create a new project
-- Fill in the consent screen
+- Fill in the oauth consent screen
 - Create an Oauth ID client in the credentials section, where you'll register the origin of your app (http://127.0.0.1:8000) in the URI section and the URI http://127.0.0.1:8000/oauth/google/login/callback/ in the Redirect URI section.
 - Finally you'll obtain a client Id and a secret key.
 
