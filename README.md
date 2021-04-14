@@ -13,7 +13,7 @@ You need to have installed:
 You have to go to the [Google API Dashboard](https://console.cloud.google.com/apis/dashboard) and:
 - Create a new project
 - Fill in the oauth consent screen
-- Create an Oauth ID client in the credentials section, where you'll register the origin of your app (http://127.0.0.1:8000) in the URI section and the URI http://127.0.0.1:8000/oauth/google/login/callback/ in the Redirect URI section.
+- Create an Oauth ID client in the credentials section, where you'll register the origin of your app (http://127.0.0.1:8000) in the URI section and the URIs http://127.0.0.1:8000/oauth and http://127.0.0.1:8000/oauth/google/login/callback/ in the Redirect URI section.
 - Finally you'll obtain a client Id and a secret key.
 
 
@@ -29,8 +29,11 @@ You have to go to the [Google API Dashboard](https://console.cloud.google.com/ap
 9. Execute <b>python manage.py runserver</b> and the application will start in the url <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a><br>
 10. Go to [administration panel](http://127.0.0.1:8000/admin)
 11. Add a new site in Site model adding the origin of your app (http://127.0.0.1:8000) as the domain name.
-12. Add a new social application in Social Applications model choosing Google ass provider, adding the client id and the secret key provided by Google and chosing your origin app as chosen sites.
+12. Add a new social application in Social Applications model choosing Google ass provider, adding the client id and the secret key provided by Google and chosing your origin app as chosen sites.<br><br>
 
+If you get an error: SocialApp matching query does not exist at http://127.0.0.1:8000/oauth/google/login/, it means that the ID of the site you created in Django admin is not the same as the one in settings.py. Consider playing around with the SITE_ID value.
+
+For example: SITE_ID = 3, etc.
 ## Development
 The app is developed in [Python](https://www.python.org) and uses the framework [Django](https://www.djangoproject.com/) for build the web app.<br><br>
 
